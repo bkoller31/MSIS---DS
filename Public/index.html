@@ -9,10 +9,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 <style type="text/css">
+
 .placeholder{
-  background-color: rgb(200,200,255);
   border: 2px solid rgb(50,50,100);
+            }
+
+section, section.placeholder {
+        background-color: white;
+        border:3px solid rgb(40,100,40);
+        text-align: center;
+        }
+
+section h2 {
+  font-size: 12pt;
+  color: #999;
+  text-align: left;
+  text-transform: uppercase;
 }
+
+.data{
+  font-size: 22pt;
+  color: rgb(0,143,0);
+}
+.label{
+  font-size: 10pt;
+  color: #ccc;
+  text-transform: capitalize;
+}
+
 </style>
 
     <title>Project Dashboard</title>
@@ -25,9 +49,21 @@
            <div class="col placeholder">
        Completion %
            </div>
-            <div class="col placeholder">
-       Due Dates | Days Remaining
-            </div>
+
+            <section class="col placeholder">
+              <h2>Target Date</h2>
+              <div class="row">
+                <div class="col">
+                  <span class="label">Date:</span>
+                  <span class="data">11/1/18</span>
+                </div>
+                <div>
+                  <span class="label">Days remaining:</span>
+                  <span class="data">17</span>
+                </div>
+              </div>
+            </section>
+
              <div class="col placeholder">
        Status
              </div>
@@ -37,9 +73,11 @@
           <div class="col placeholder" style="height:200px">
      Budget chart goes here
           </div>
+
            <div class="col placeholder">
      Burndown chart goes here
            </div>
+
             <div class="col placeholder">
      Effort chart goes here
             </div>
