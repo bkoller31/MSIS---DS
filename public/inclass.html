@@ -14,8 +14,9 @@
   </head>
   <body>
 
-    <div class="container-fluid">
-      <h1>Project Name</h1>
+    <main id="Dashboard" class="container-fluid">
+      <h1>{{ name }}</h1>
+      <p><em>{{ short_description }}</em></p>
         <div class="row">
            <div class="col placeholder">
              Completion %
@@ -25,11 +26,11 @@
               <div class="row">
                 <div class="col">
                   <h2>Due Date</h2>
-                  <div class="ban">3 Nov 2018</div>
+                  <div class="ban">{{ pretty_target_date }}</div>
                 </div>
                 <div class="col">
                   <h2>Days Remaining</h2>
-                    <div class="ban">27</div>
+                    <div class="ban">{{ days_left }}</div>
                 </div>
               </div>
             </section>
@@ -40,9 +41,16 @@
         </div> <!-- end row 1, high-level summary information -->
 
         <div class="row">
-          <div class="col placeholder" style="height:200px">
-            Budget chart goes here
-          </div>
+          <section class="col">
+            <h2>Spent</h2>
+            <div class="ban">{{ spent }}</div>
+
+            <h2>Budget</h2>
+            <div class="ban">{{ budget }}</div>
+
+            <h2>Projected Spend</h2>
+            <div class="ban">{{ projected_spend }}</div>
+          </section>
 
            <div class="col placeholder">
              Burndown chart goes here
@@ -98,10 +106,14 @@
           </table>
         </div> <!-- end row 3, tabular data -->
 
-        </div>
-    </div>
+      </main>
 
-<script src="js/tablesort.min.js"></script>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/dashboard.app.js"></script>
+
+    <script src="js/tablesort.min.js"></script>
 <script>
 //tablesort plugin - http://tristen.ca/tablesort/demo/
 new Tablesort(document.getElementById('taskTable'));
