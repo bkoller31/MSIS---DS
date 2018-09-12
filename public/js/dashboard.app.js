@@ -15,12 +15,16 @@ var dashboardApp = new Vue({
         //this.target_date
         return 31;
         },
+
+        //Why isn't this working
       pretty_target_date: function () {
-        return pretty_date(this.target_date)
+        return this.pretty_date(this.target_date);
         }
-    },
-    methods: {},
+      },
+
+    methods: {
       pretty_date: function (d) {
-        //make magic happen
+        return moment(d).format('l')
       }
+    }
 })
