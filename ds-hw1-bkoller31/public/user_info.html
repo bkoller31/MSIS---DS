@@ -20,7 +20,7 @@
     <body>
 
 
-      <div class="container-fluid">
+      <main id="randomUser" class="container-fluid">
         <h1>User Information</h1>
 
           <div class="row">
@@ -44,23 +44,25 @@
 <span>Copyright: Brendan Koller</span>
 </div>
 
-<blockquote>
-  <p>
-    Here is some personal information about me!
-  </p>
-</blockquote>
-
 
 <ul style="list-style-type: none">
-  <li>Name: Brendan Koller</li>
-  <li>Country of Origin: United States</li>
-  <li>Birthdate: November 3, 1995</li>
-  <li>Age: 22</li>
-  <li> Email Address:<a href ="mailto:bkoller@iu.edu"> bkoller@iu.edu </a></li>
+  <li>Name: {{user_info.results[0].name.first}}</li>
+  <li>Home Town: {{user_info.results[0].location.city}}</li>
+  <li>Birthdate: {{user_info.results[0].dob.date}}</li>
+  <li>Age: {{user_info.results[0].dob.age}}</li>
+  <li> Email Address {{user_info.results[0].email}} </li>
 </ul>
 
 
+</main>
 
+      <!-- moment.js via CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+      <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/random_user.js"></script>
 
     </body>
+
   </html>
