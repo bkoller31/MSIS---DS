@@ -39,19 +39,23 @@
 
           </div>
 
-<div style="text-align: center">
-<a href="img/Professional-Headshot2.jpg"> <img  src="img/Professional-Headshot2.jpg" width="350" height = "350"  alt="Italian Trulli"></a>
-<span>Copyright: Brendan Koller</span>
-</div>
+<p>
 
+<a :href="user_info.picture.large">
+<img  :src="user_info.picture.large">
+<br />
+Photo Source</a>
+<br />
 
-<ul style="list-style-type: none">
-  <li>Name: {{user_info.results[0].name.first}}</li>
-  <li>Home Town: {{user_info.results[0].location.city}}</li>
-  <li>Birthdate: {{user_info.results[0].dob.date}}</li>
-  <li>Age: {{user_info.results[0].dob.age}}</li>
-  <li> Email Address {{user_info.results[0].email}} </li>
-</ul>
+  Name: {{user_info.name.first}} {{user_info.name.last}} <br />
+  Location: {{user_info.location.city}} <br />
+  Birthday: {{pretty_date(user_info.dob.date)}} <br />
+  Age: {{agecalc()}} <br />
+  Email: {{user_info.email}} <br />
+<br />
+<button class="btn" @click="fetchResults">Refresh</button>
+</p>
+
 
 
 </main>
